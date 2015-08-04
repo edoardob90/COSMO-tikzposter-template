@@ -171,6 +171,20 @@
 }{}
 
 
+
+%%% COSMO title style
+\definetitlestyle{COSMO}{
+    width=0.9\textwidth, roundedcorners=20, linewidth=0.4cm, innersep=1cm,
+    titletotopverticalspace=15mm, titletoblockverticalspace=20mm,
+    titlegraphictotitledistance=1cm, titletextscale=1
+}{
+    \begin{scope}[line width=\titlelinewidth, rounded corners=\titleroundedcorners]
+        \draw[color=framecolor, fill=titlebgcolor]%
+        (\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+    \end{scope}
+}
+
+
 \endinput
 %%
 %% End of file `tikzposterTitlestyles.tex'.

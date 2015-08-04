@@ -40,14 +40,17 @@
  \input{Setup}
 
  % Poster details: title and author(s)
- \title{COSMO TiKz Poster Template}
+ \title{COSMO TikZ Poster Template}
  \author{Tyler Durden}
 
  % -- PREDEFINED THEMES ---------------------- %
  % Choose LAYOUT:  Default, Basic, Rays, Simple, Envelope, Wave, Board, Autumn, Desert,
  %% Custom theme COSMO
  \usetheme{COSMO}
- %\usecolorstyle[colorPalette=BrownBlueOrange]{Germany}
+ 
+ 
+ 
+
 
 
  \begin{document}
@@ -70,13 +73,12 @@
              \\ \dots         \end{quote}
 
          \begin{tikzfigure}[A figure can be made with \bs \texttt{tikzfigure}; \bs\texttt{figure} does not work]
-      \begin{tikzpicture}
-        \draw[draw=none,inner color=red, outer color=green] (0,0) circle (1.5cm);
-      \end{tikzpicture}
+            \begin{tikzpicture}
+                \draw[draw=none,inner color=red, outer color=green] (0,0) circle (1.5cm);
+            \end{tikzpicture}
          \end{tikzfigure}
  \innerblock[]{Inner Blocks}{Inner blocks may be created inside of blocks with the command \bs\texttt{innerblock[{\it options}]\{{\it Heading}\}\{{\it Text}\}} }
             \coloredbox{Text may be highlighted using colored boxes created by \bs\texttt{coloredbox[{\it options}]\{{\it Text\}}}}
-
      }
      \note[targetoffsetx=-.05\textwidth,targetoffsety=9.5cm,innersep=.4cm,angle=-45,connection]{Optional arguments for the format of the poster}
      \block{The title matter}{

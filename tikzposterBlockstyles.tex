@@ -218,6 +218,22 @@
 }
 
 
+%%% COSMO block style
+\defineblockstyle{COSMO}{%
+    titlewidthscale=1, bodywidthscale=1, titleleft,
+    titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+    bodyverticalshift=0pt, roundedcorners=20, linewidth=0.4cm,
+    titleinnersep=1cm, bodyinnersep=1cm
+}{%
+    \begin{scope}[line width=\blocklinewidth, rounded corners=\blockroundedcorners]
+        \ifBlockHasTitle %
+           \draw[color=blocktitlebgcolor, fill=blocktitlebgcolor, rounded corners=\blockroundedcorners] (blockbody.south west) rectangle                  (blocktitle.north east);
+           \draw[color=blocktitlebgcolor, fill=blockbodybgcolor, rounded corners=\blockroundedcorners] (blockbody.south west) rectangle                   (blockbody.north east);
+        \else
+           \draw[color=blocktitlebgcolor, fill=blockbodybgcolor, rounded corners=\blockroundedcorners] (blockbody.south west) rectangle                   (blockbody.north east);
+        \fi
+    \end{scope}
+}
 
 
 \endinput
