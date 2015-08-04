@@ -24,10 +24,23 @@
 \DeclareRobustCommand{\spacedlowsmallcaps}[1]{\MakeTextLowercase{\textsc{\lowsmallcapsspacing{#1}}}}%\protect
 
 %%% Commands for title and author
-\newcommand{\MyTitle}[1]{\title{\sffamily\normalfont\spacedallcaps{#1}}}
-\newcommand{\MyAuthor}[1]{\author{\spacedlowsmallcaps{#1}}}
-
+%\newcommand{\MyTitle}[1]{\title{\sffamily\normalfont\spacedallcaps{#1}}}
+%\newcommand{\MyAuthor}[1]{\author{\spacedlowsmallcaps{#1}}}
 
 %%% tikzposter command
 \newcommand{\bs}{\textbackslash}   % backslash
 \newcommand{\cmd}[1]{{\bf \color{red}#1}}   % highlights command
+
+
+
+%%% Institution and logos are herein defined since are always the same
+\institute{%
+    \parbox{\linewidth}{\centering Laboratory of Computational Science and Modelling, IMX \\ 
+    \'{E}cole Polytechnique F\'{e}d\'{e}rale de Lausanne \\
+    Lausanne, Switzerland}
+}
+\titlegraphic{%
+    \includegraphics[width=0.2\textwidth,keepaspectratio]{Pictures/cosmo_logo}
+    \hfill
+    \includegraphics[width=0.2\textwidth,keepaspectratio]{Pictures/EPFL-Logo-CMJN}
+}%
