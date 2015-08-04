@@ -1,0 +1,5 @@
+TODO for the theme "COSMO":
+    - Color palette: 
+        + RED: pantone 032, for borders and block titles' background
+        + WHITE: text, poster background
+    - 
