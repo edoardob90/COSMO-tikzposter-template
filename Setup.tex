@@ -1,12 +1,21 @@
 %% Language spelling patterns; default: only english
 \usepackage[english]{babel}
 
-%% Font and related stuff
-%\usepackage[sc]{mathpazo} % use Palatino Font Family
+%%% --- Font and related stuff --- %%%
+%%% Palatino font family
+%\usepackage[sc]{mathpazo} % use Palatino Font Family + EulerVM for math
 %\linespread{1.08}
-\usepackage{libertine}
-\renewcommand*\familydefault{\sfdefault}
-\usepackage{eulervm} % Euler font for math, fits better with Palatino
+
+%%% Libertine Biolinum Sans Serif + EulerVM for math
+%\usepackage{libertine}
+%\renewcommand*\familydefault{\sfdefault}
+%\usepackage{eulervm} % Euler font for math, fits better with Palatino
+
+%%% CM Bright font family for text and Kurier math
+\usepackage{cmbright}
+\usepackage[math]{kurier}
+
+%%% ------------------------------ %%%
 
 %% Encoding
 \usepackage[T1]{fontenc}
@@ -16,7 +25,7 @@
 \usepackage{textcase} % for commands `MakeTextUpper[Lower]Case'
 
 %% COMMANDS
-%%% Commands for 'lowsmallcaps' and 'spacedcaps'
+%%% Definitions for 'spacedlowsmallcaps' and 'spacedallcaps' commands
 \usepackage{soul} % for letterspacing 
 \sodef\allcapsspacing{\upshape}{0.15em}{0.65em}{0.6em}%
 \sodef\lowsmallcapsspacing{\scshape}{0.075em}{0.5em}{0.6em}%   
@@ -30,8 +39,6 @@
 %%% tikzposter command
 \newcommand{\bs}{\textbackslash}   % backslash
 \newcommand{\cmd}[1]{{\bf \color{red}#1}}   % highlights command
-
-
 
 %%% Institution and logos are herein defined since are always the same
 \institute{%
