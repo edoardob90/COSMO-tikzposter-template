@@ -146,7 +146,9 @@
          }
          \end{subcolumns}
 
-         \block[titlewidthscale=.8,bodywidthscale=.9,titleoffsety=9.5mm,bodyoffsety=9mm]{Changing the Poster's Appearance}{
+         \block%[titlewidthscale=.8,bodywidthscale=.9,titleoffsety=9.5mm,bodyoffsety=9mm]
+         %%% bodyoffset[x/y] will shift the block body according to length given
+         {Changing the Poster's Appearance}{
              If the default appearance of the title, background, blocks, and notes is not desired, you may change the colors by calling the color style along with a general layout theme with the commands
              \begin{quote}
        \texttt{\bs usecolorpalette}\{{\em color palette}\}\\

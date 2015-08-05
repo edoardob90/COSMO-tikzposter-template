@@ -56,15 +56,15 @@
  \defineblockstyle{Default}{
     titlewidthscale=1, bodywidthscale=1, titlecenter,
     titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
-    bodyverticalshift=0pt, roundedcorners=30, linewidth=0.4cm,
+    bodyverticalshift=0pt, roundedcorners=20, linewidth=0.4cm,
     titleinnersep=1cm, bodyinnersep=1cm
 }{
     \begin{scope}[line width=\blocklinewidth, rounded corners=\blockroundedcorners]
         \ifBlockHasTitle %
            \draw[color=blocktitlebgcolor, fill=blocktitlebgcolor] (blockbody.south west) rectangle (blocktitle.north east);
-           \draw[color=blocktitlebgcolor, fill=blockbodybgcolor] (blockbody.south west) rectangle (blockbody.north east);
+           \filldraw[fill=blockbodybgcolor, draw=blocktitlebgcolor] (blockbody.south west) rectangle (blockbody.north east);
         \else
-           \draw[color=blocktitlebgcolor, fill=blockbodybgcolor] (blockbody.south west) rectangle (blockbody.north east);
+           \filldraw[fill=blockbodybgcolor, draw=framecolor] (blockbody.south west) rectangle (blockbody.north east);
         \fi
     \end{scope}
 }
@@ -218,21 +218,38 @@
 }
 
 
-%%% COSMO block style
-\defineblockstyle{COSMO}{%
+%%% COSMO block styles
+%% Style 1: based on Default blockstyle
+\defineblockstyle{COSMOblock1}{%
     titlewidthscale=1, bodywidthscale=1, titleleft,
     titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
-    bodyverticalshift=0pt, roundedcorners=20, linewidth=0.4cm,
+    bodyverticalshift=0pt, roundedcorners=10, linewidth=0.4cm,
     titleinnersep=1cm, bodyinnersep=1cm
 }{%
     \begin{scope}[line width=\blocklinewidth, rounded corners=\blockroundedcorners]
         \ifBlockHasTitle %
-           \draw[color=blocktitlebgcolor, fill=blocktitlebgcolor, rounded corners=\blockroundedcorners] (blockbody.south west) rectangle                  (blocktitle.north east);
-           \draw[color=blocktitlebgcolor, fill=blockbodybgcolor, rounded corners=\blockroundedcorners] (blockbody.south west) rectangle                   (blockbody.north east);
+            \filldraw[fill=blocktitlebgcolor, draw=blocktitlebgcolor, rounded corners=\blockroundedcorners] (blockbody.south west) rectangle (blocktitle.north east);
+            \filldraw[fill=blockbodybgcolor, draw=blocktitlebgcolor] (blockbody.south west) rectangle (blockbody.north east);
         \else
-           \draw[color=blocktitlebgcolor, fill=blockbodybgcolor, rounded corners=\blockroundedcorners] (blockbody.south west) rectangle                   (blockbody.north east);
+            \filldraw[fill=blockbodybgcolor, draw=framecolor] (blockbody.south west) rectangle (blockbody.north east);
         \fi
     \end{scope}
+}
+
+%% Style 2: based on Slide style
+\defineblockstyle{COSMOblock2}{%
+    titlewidthscale=1, bodywidthscale=1, titleleft,
+    titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+    bodyverticalshift=0pt, roundedcorners=0, linewidth=0.1cm, titleinnersep=1cm,
+    bodyinnersep=1cm
+}{%
+    \ifBlockHasTitle%
+        \shadedraw[draw=none, left color=blocktitlebgcolor, right color=blockbodybgcolor]
+           (blocktitle.south west) rectangle (blocktitle.north east);
+    \fi%
+    \draw[draw=framecolor, fill=blockbodybgcolor, line width=\blocklinewidth] %
+        (blockbody.north west) [rounded corners=10] -- (blockbody.south west) --
+        (blockbody.south east) [rounded corners=0]-- (blockbody.north east) -- cycle;
 }
 
 

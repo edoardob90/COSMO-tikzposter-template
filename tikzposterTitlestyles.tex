@@ -172,8 +172,9 @@
 
 
 
-%%% COSMO title style
-\definetitlestyle{COSMO}{
+%%% COSMO title styles
+%% COSMO1: with rectangular frame
+\definetitlestyle{COSMOtitle1}{
     width=0.9\textwidth, roundedcorners=20, linewidth=0.4cm, innersep=1cm,
     titletotopverticalspace=15mm, titletoblockverticalspace=20mm,
     titlegraphictotitledistance=1cm, titletextscale=1
@@ -183,7 +184,12 @@
         (\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
     \end{scope}
 }
-
+%% COSMO2: DEFAULT, without rectangular frame
+\definetitlestyle{COSMOtitle2}{
+    width=0.9\textwidth, roundedcorners=20, linewidth=0.4cm, innersep=1cm,
+    titletotopverticalspace=15mm, titletoblockverticalspace=20mm,
+    titlegraphictotitledistance=1cm, titletextscale=1
+}{}
 
 \endinput
 %%
