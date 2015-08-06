@@ -24,9 +24,9 @@
 %%
 %%
 %% This version of `tikzposter-example.tex' has been modified by Edoardo Baldi to fit the posters' style
-%% at the Laboratory of COmputational Science and MOdelling (COSMO) at EPFL.
+%% at the Laboratory of Computational Science and Modelling (COSMO) at EPFL.
 %%
-%% Copyright (C) 2015 by COSMO group
+%% Copyright (C) August 2015 by Edoardo Baldi and COSMO group
 %%
 %%
 
@@ -36,7 +36,7 @@
 
  %\tikzposterlatexaffectionproofon %shows small comment on how the poster was made at bottom of poster
  
- % --- NEEDED packages (other than loaded by class), and custom settings --- %
+ % --- NEEDED packages (other than loaded by class) and custom settings --- %
  \input{Setup}
 
  % Poster details: title and author(s)
@@ -49,17 +49,13 @@
  \usetheme{COSMO}
  
  
- 
-
-
-
  \begin{document}
 
      \maketitle
 
      \begin{columns}%blocks will be placed into columns
          \column{.55}
-         \block[roundedcorners=40]{Creating the document}{
+         \block[roundedcorners=40]{Creating the document (see changed default options, e.g.\ the shape)}{
              The document begins with:
              \begin{quote}
                  \texttt{\bs documentclass[25pt, a0paper, portrait, margin=10mm, innermargin=15mm,
@@ -69,8 +65,9 @@
                  \bs institute\{Institute \}\\
                  \bs titlegraphic\{Logo\}\\
                  \bs begin\{document\}\\
-                 \bs maketitle}
-             \\ \dots         \end{quote}
+                 \bs maketitle}\\
+                 \dots
+             \end{quote}
 
          \begin{tikzfigure}[A figure can be made with \bs \texttt{tikzfigure}; \bs\texttt{figure} does not work]
             \begin{tikzpicture}
