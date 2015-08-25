@@ -40,9 +40,15 @@
  \input{Setup}
 
  % Poster details: title and author(s)
+ 
  \title{COSMO TikZ Poster Template}
+ 
  \author{Tyler Durden}
+ 
+ %%% INSTITUTE and TITLE GRAPHIC  defined in Setup.tex %%%
 
+ 
+ 
  % -- PREDEFINED THEMES ---------------------- %
  % Choose LAYOUT:  Default, Basic, Rays, Simple, Envelope, Wave, Board, Autumn, Desert,
  %% Custom theme COSMO
@@ -51,7 +57,7 @@
  
  \begin{document}
 
-     \maketitle
+     \maketitle[titlegraphictotitledistance=-9cm]
 
      \begin{columns}%blocks will be placed into columns
          \column{.55}
@@ -101,7 +107,7 @@
          The title's alignment can be set by \texttt{titleleft, titlecenter, titleright}, the body may be shifted vertically by setting \texttt{bodyverticalshift}, and the shape of the block can be altered by setting \texttt{roundedcorners, linewidth}. The inner margins of the title can by set by \texttt{titleinnersep,bodyinnersep}.
      }
 
-     \note[targetoffsetx=24cm, targetoffsety=-9cm,rotate=1,angle=270,radius=8cm,width=.75\textwidth,innersep=.4cm]{
+     \note[targetoffsetx=24cm, targetoffsety=-13cm,rotate=1,angle=270,radius=8cm,width=.75\textwidth,innersep=.4cm]{
          You can place notes that are ``attached'' to the previous block using the command
          \begin{quote} \texttt{\bs note[{\it options}]\{{\it contents}\}}\end{quote}
          The note is placed by default slightly to the right of a ``target'' in the center of the previous block.  The note style may also allow for a connection between the note and the ``target''.  \\
@@ -143,7 +149,7 @@
          }
          \end{subcolumns}
 
-         \block%[titlewidthscale=.8,bodywidthscale=.9,titleoffsety=9.5mm,bodyoffsety=9mm]
+         \block[titlewidthscale=.8,bodywidthscale=.9,titleoffsety=9.5mm,bodyoffsety=9mm]
          %%% bodyoffset[x/y] will shift the block body according to length given
          {Changing the Poster's Appearance}{
              If the default appearance of the title, background, blocks, and notes is not desired, you may change the colors by calling the color style along with a general layout theme with the commands

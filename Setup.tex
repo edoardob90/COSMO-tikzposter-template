@@ -7,13 +7,13 @@
 %\linespread{1.08}
 
 %%% Libertine Biolinum Sans Serif + EulerVM for math
-%\usepackage{libertine}
-%\renewcommand*\familydefault{\sfdefault}
-%\usepackage{eulervm} % Euler font for math, fits better with Palatino
+\usepackage{libertine}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{eulervm} % Euler font for math, fits better with Palatino
 
 %%% CM Bright font family for text and Kurier math
-\usepackage{cmbright}
-\usepackage[math]{kurier}
+%\usepackage{cmbright}
+%\usepackage[math]{kurier}
 
 %%% ------------------------------ %%%
 
@@ -21,8 +21,13 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
+%% Maths
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+
 %% Other packages
 \usepackage{textcase} % for commands `MakeTextUpper[Lower]Case'
+\usepackage{adjustbox} % fix of misalignment inside blocks
+\usepackage{lipsum} % fictitious text for draft content
 
 %% COMMANDS
 %%% Definitions for 'spacedlowsmallcaps' and 'spacedallcaps' commands
@@ -36,18 +41,34 @@
 %\newcommand{\MyTitle}[1]{\title{\sffamily\normalfont\spacedallcaps{#1}}}
 %\newcommand{\MyAuthor}[1]{\author{\spacedlowsmallcaps{#1}}}
 
+% Couple of shortcuts to highlight text
+\newcommand{\Highl}[1]{\textcolor{colorOne}{\bfseries #1}}
+\newcommand{\highl}[1]{\textcolor{colorOne}{#1}}
+
+
 %%% tikzposter command
 \newcommand{\bs}{\textbackslash}   % backslash
 \newcommand{\cmd}[1]{{\bf \color{red}#1}}   % highlights command
 
-%%% Institution and logos are herein defined since are always the same
+%%% INSTITUTE and TITLE GRAPHICS definition
+% Here because they should be always the same
 \institute{%
-    \parbox{\linewidth}{\centering Laboratory of Computational Science and Modelling, Institute of Materials \\[6pt] 
+    \parbox{\linewidth}{\centering\itshape Laboratory of Computational Science and Modelling, Institute of Materials \\[6pt] 
     \'{E}cole Polytechnique F\'{e}d\'{e}rale de Lausanne \\[6pt]
     Lausanne, Switzerland}
 }
 \titlegraphic{%
-    \includegraphics[width=.25\textwidth,keepaspectratio]{Pictures/cosmo_logo}
+    \includegraphics[width=15cm,keepaspectratio]{Pictures/cosmo_logo}
     \hfill
-    \includegraphics[width=.25\textwidth,keepaspectratio]{Pictures/EPFL-Logo-CMJN}
+    \includegraphics[width=15cm,keepaspectratio]{Pictures/EPFL-Logo-CMJN}
 }%
+
+%%% Custom TITLE arrangement
+\settitle{%
+    \centering \vbox{%
+        \@titlegraphic \\[\TP@titlegraphictotitledistance] \centering
+        \color{titlefgcolor} {\bfseries \Huge \sc \@title \par}
+        \vspace*{1em}
+        {\huge \@author \par} \vspace*{1em} {\LARGE \@institute}
+    }
+}
